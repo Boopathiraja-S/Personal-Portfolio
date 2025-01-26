@@ -31,9 +31,9 @@ const Footer = () => {
           {/* contact details ph and email */}
           <h3 className='text-yellow-500 font-medium text-[17px]'>Contack details</h3>
           <div>
-            <p><span>Address : </span> Ganeshapuram, Coimbatore, Tamilnadu, 641107 </p>
-            <p><span>Email ID : </span><a href="mailto:br2704581@gmail.com">br2704581@gmail.com</a></p>
-            <p><span>Phone no : </span>+91 9600619503</p>
+            <p><span className='font-medium'>Address : </span> Ganeshapuram, Coimbatore, Tamilnadu, 641107 </p>
+            <p><span className='font-medium'>Email ID : </span><a href="mailto:br2704581@gmail.com">br2704581@gmail.com</a></p>
+            <p><span className='font-medium'>Phone no : </span>+91 9600619503</p>
           </div>
         </div>
 

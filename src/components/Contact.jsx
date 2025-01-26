@@ -37,7 +37,7 @@ const Contact = () => {
             transition={{ duration: 1.5 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className='container mx-auto py-10 lg:px-32 w-full overflow-hidden mt-3'>
+            className='container mx-auto py-10 lg:px-32 w-full overflow-hidden mt-9'>
             <h1
                 className='text-2xl sm:text-4xl font-bold mb-2 text-center text-yellow-500'
             >Contact
