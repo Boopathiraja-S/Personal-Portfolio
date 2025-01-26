@@ -1,0 +1,60 @@
+@import 'tailwindcss';
+
+body {
+    background-color: rgba(32, 32, 32, 0.87);
+}
+
+#scroll::-webkit-scrollbar {
+    display: none;
+}
+#projectDetails::-webkit-scrollbar{
+    display: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.active {
+    color: white;
+    border-bottom: 2px solid white;
+}
+
+a {
+    color: rgb(214, 209, 209);
+    transition: all 0.1s ease;
+    font-weight: 500;
+}
+
+a:hover {
+    color: white;
+    border-bottom: 2px solid white;
+    cursor: pointer;
+}
+
+#logo:hover {
+    border-bottom: rgba(32, 32, 32, 0.87);
+}
+
+#logo {
+    border-bottom: rgba(32, 32, 32, 0.87);
+}
+
+#resumeA {
+    border-bottom: none;
+    color: white;
+}
+
+#github {
+    border-bottom: none;
+    color: white;
+}
+
+#website {
+    border-bottom: none;
+    color: white;
+}
+#footerImg{
+    border-bottom: none;
+    color: white;
+}
