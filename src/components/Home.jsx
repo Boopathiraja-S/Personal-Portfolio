@@ -41,8 +41,8 @@ const Home = () => {
       </div>
 
       {/* img */}
-      <div className='z-0 absolute right-1 md:right-4 top-28 md:top-22'>
-        <img src={profile} className='min-h-80 md:min-h-[450px] rounded-md w-full' alt="profile picture" />
+      <div className='z-0 absolute right-1 lg:right-4 top-28 lg:top-22'>
+        <img src={profile} className='max-h-[320px] lg:min-h-[450px] rounded-md w-full' alt="profile picture" />
       </div>
     </motion.div>
   )
