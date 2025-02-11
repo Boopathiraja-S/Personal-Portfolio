@@ -8,6 +8,7 @@ import { motion } from 'motion/react';
 const About = () => {
   const [Index, setIndex] = useState(0)
   const [cardToShow, setCardToShow] = useState(1)
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
 
@@ -20,9 +21,15 @@ const About = () => {
       }
     }
     updateCardToShow();
+
     window.addEventListener("resize", updateCardToShow)
     return () => window.removeEventListener("resize", updateCardToShow)
   }, [])
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsMounted(true), 100); // Small delay to prevent flickering
+    return () => clearTimeout(timer);
+  }, []);
 
   function RightScroll() {
     setIndex(preve => (preve + 1) % CourseData.length)
@@ -31,6 +38,8 @@ const About = () => {
   function LeftScroll() {
     setIndex(preve => preve === 0 ? CourseData.length - 1 : preve - 1)
   }
+
+  if (!isMounted) return null;
 
   return (
     <motion.div
@@ -86,9 +95,8 @@ const About = () => {
             {
               CourseData.map((data) => {
                 return (
-                  <div style={{ transform: `translate(-${(Index * 100) / cardToShow}%)` }} key={data.id}>
+                  <div style={{ transform: `translate(-${(Index * 100) / cardToShow}%)`, transition:"transform 0.5s ease-in-out" }} key={data.id}>
                     <ShowCourse
-                      key={data.id}
                       courseName={data.course}
                       image={data.img}
                       level={data.level}
