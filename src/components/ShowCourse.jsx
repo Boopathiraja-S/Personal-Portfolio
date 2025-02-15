@@ -4,9 +4,9 @@ import { motion } from 'motion/react'
 const ShowCourse = ({ courseName, image, level }) => {
     return (
         <motion.div
-            initial={{ opacity: 0, y: -200 }}
+            initial={{ opacity: 0, x: -200 }}
             transition={{ duration: 1.5 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className='flex bg-white rounded-md w-full items-center 
         justify-center p-5 shadow-md hover:shadow-amber-400 hover:scale-105 

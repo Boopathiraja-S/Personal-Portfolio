@@ -7,7 +7,7 @@ import { motion } from 'motion/react';
 
 const About = () => {
   const [Index, setIndex] = useState(0)
-  const [cardToShow, setCardToShow] = useState(1)
+  const [cardToShow, setCardToShow] = useState(2)
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -32,11 +32,11 @@ const About = () => {
   }, []);
 
   function RightScroll() {
-    setIndex(preve => (preve + 1) % CourseData.length)
+    setIndex(preve => (preve + 2) % CourseData.length)
 
   }
   function LeftScroll() {
-    setIndex(preve => preve === 0 ? CourseData.length - 1 : preve - 1)
+    setIndex(preve => preve === 0 ? CourseData.length - 2 : preve - 2)
   }
 
   if (!isMounted) return null;
@@ -85,29 +85,32 @@ const About = () => {
         {/* images */}
 
         <div className='flex'>
-          <button className='block text-xl cursor-pointer' onClick={LeftScroll}><FaChevronLeft /></button>
+        <button className='block text-xl cursor-pointer' onClick={LeftScroll}><FaChevronLeft /></button>
 
-          <div className='flex items-center gap-5 py-3 pl-3
+        <div className='flex items-center gap-5 py-3 pl-3
          text-black
          overflow-scroll drop-shadow-lg'
-            id='scroll'
-          >
-            {
-              CourseData.map((data) => {
-                return (
-                  <div style={{ transform: `translate(-${(Index * 100) / cardToShow}%)`, transition:"transform 0.5s ease-in-out" }} key={data.id}>
-                    <ShowCourse
-                      courseName={data.course}
-                      image={data.img}
-                      level={data.level}
-                    />
-                  </div>
-                )
-              })
-            }
-          </div>
-          <button className='block text-xl cursor-pointer' onClick={RightScroll}><FaChevronRight /></button>
+          id='scroll'
+        >
+          {
+            CourseData.map((data) => {
+              return (
+                <div 
+                style={{ transform: `translate(-${(Index * 100) / cardToShow}%)` }}
+                key={data.id}>
+                  <ShowCourse
+                    key={data.id}
+                    courseName={data.course}
+                    image = {data.img}
+                    level={data.level}
+                  />
+                </div>
+              )
+            })
+          }
         </div>
+        <button className='block text-xl cursor-pointer' onClick={RightScroll}><FaChevronRight /></button>
+      </div>
 
       </div>
     </motion.div>
